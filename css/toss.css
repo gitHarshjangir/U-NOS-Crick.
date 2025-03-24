@@ -1,0 +1,541 @@
+/* Toss Page Styles */
+.toss-page {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.toss-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.toss-header h1 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.format-display {
+    background: #e8f0fe;
+    color: #1e3c72;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.stadium-info {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Teams Info Styles */
+.teams-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 250px;
+    flex: 1;
+}
+
+.team-card h2 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+}
+
+.captain-info {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.vs-badge {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e3c72;
+    background: #e8f0fe;
+    padding: 10px 20px;
+    border-radius: 50%;
+}
+
+/* Toss Section Styles */
+.toss-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.coin-container {
+    margin: 40px 0;
+    perspective: 1500px;
+}
+
+.coin {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    transition: transform 3s ease-out;
+}
+
+.coin .heads,
+.coin .tails {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e3c72;
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    box-shadow: 
+        inset 0 0 20px rgba(0,0,0,0.2),
+        0 0 30px rgba(255,215,0,0.3),
+        inset 0 0 50px rgba(255,215,0,0.2);
+    border: 12px solid #d4af37;
+    overflow: hidden;
+}
+
+.coin .heads::before,
+.coin .tails::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255,255,255,0.4) 0%,
+        rgba(255,255,255,0.1) 30%,
+        rgba(255,255,255,0) 60%
+    );
+    top: -25%;
+    left: -25%;
+    pointer-events: none;
+}
+
+.coin .heads::after,
+.coin .tails::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+    pointer-events: none;
+}
+
+.coin .heads {
+    transform: rotateY(0deg);
+}
+
+.coin .tails {
+    transform: rotateY(180deg);
+}
+
+.coin .coin-text {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.coin.flip {
+    animation: flip-coin 3s ease-out forwards;
+}
+
+@keyframes flip-coin {
+    0% { 
+        transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    100% { 
+        transform: rotateY(var(--final-rotation)) rotateX(var(--final-tilt)) rotateZ(var(--final-spin));
+    }
+}
+
+/* Toss Controls Styles */
+.toss-controls {
+    margin-top: 30px;
+}
+
+.toss-choice h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.choice-buttons,
+.decision-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.choice-btn,
+.decision-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background: #1e3c72;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.choice-btn:hover,
+.decision-btn:hover {
+    background: #2a5298;
+    transform: translateY(-2px);
+}
+
+.choice-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Toss Result Styles */
+.toss-result {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e8f0fe;
+    border-radius: 15px;
+}
+
+.toss-result h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.toss-result p {
+    color: #2a5298;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Match Summary Styles */
+.match-summary {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.match-summary h3 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+/* AI Model Selection Styles */
+.ai-model-selection {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.ai-model-selection label {
+    color: #1e3c72;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.ai-model-select {
+    padding: 10px 15px;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-model-select:hover {
+    border-color: #2a5298;
+}
+
+.ai-model-select:focus {
+    outline: none;
+    border-color: #2a5298;
+}
+
+/* Start Match Button Styles */
+.start-match-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(42, 82, 152, 0.3);
+}
+
+.start-match-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(42, 82, 152, 0.4);
+}
+
+.start-match-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(42, 82, 152, 0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Captain Selection Styles */
+.captain-selection {
+    margin-bottom: 15px;
+}
+
+.captain-select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.captain-select:hover {
+    border-color: #2a5298;
+}
+
+.captain-select:focus {
+    outline: none;
+    border-color: #2a5298;
+}
+
+/* Validation Message Styles */
+.validation-message {
+    background: #ffe5e5;
+    color: #e74c3c;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Enhanced Responsive Styles */
+@media (max-width: 1200px) {
+    .toss-page {
+        max-width: 95%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    .coin {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .coin .heads,
+    .coin .tails {
+        font-size: 2.2rem;
+        border-width: 10px;
+    }
+    
+    .start-match-btn {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .teams-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .team-card {
+        min-width: 200px;
+        width: 100%;
+    }
+
+    .vs-badge {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .coin {
+        width: 150px;
+        height: 150px;
+    }
+
+    .choice-buttons,
+    .decision-buttons {
+        gap: 15px;
+    }
+
+    .choice-btn,
+    .decision-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .toss-page {
+        padding: 20px;
+    }
+    
+    .toss-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .format-display {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    
+    .ai-model-selection {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .ai-model-selection label {
+        margin-right: 0;
+    }
+    
+    .ai-model-select {
+        width: 100%;
+    }
+    
+    .start-match-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .toss-page {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .toss-header {
+        margin-bottom: 25px;
+    }
+    
+    .toss-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .stadium-info {
+        font-size: 0.95rem;
+    }
+    
+    .coin {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .coin .heads,
+    .coin .tails {
+        font-size: 1.8rem;
+        border-width: 8px;
+    }
+    
+    .choice-btn,
+    .decision-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .toss-result {
+        padding: 15px;
+    }
+    
+    .toss-result h3 {
+        font-size: 1.3rem;
+    }
+    
+    .toss-result p {
+        font-size: 1rem;
+    }
+    
+    .match-summary {
+        padding: 15px;
+    }
+    
+    .match-summary h3 {
+        font-size: 1.3rem;
+    }
+    
+    .team-card h2 {
+        font-size: 1.3rem;
+    }
+    
+    .validation-message {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .coin {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .coin .heads,
+    .coin .tails {
+        font-size: 1.5rem;
+        border-width: 6px;
+    }
+    
+    .toss-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .choice-btn,
+    .decision-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        width: 100%;
+    }
+    
+    .choice-buttons,
+    .decision-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+} 

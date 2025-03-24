@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Summary</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/summary.css">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <div class="loading-text">
+            <h2>Analyzing Match Data</h2>
+            <p id="loadingStatus">Processing with AI...</p>
+        </div>
+    </div>
+
+    <div id="contentContainer" class="container" style="display: none;">
+        <!-- Match Info Section -->
+        <div class="card" id="matchInfo">
+            <!-- Will be populated by JS -->
+        </div>
+
+        <!-- Team Scores Section -->
+        <div class="card score-card">
+            <div class="team-score" id="team1Score">
+                <!-- Will be populated by JS -->
+            </div>
+            <div class="team-score" id="team2Score">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Match Result Section -->
+        <div class="card" id="matchResult">
+            <!-- Will be populated by JS -->
+        </div>
+
+        <!-- Match Analysis Section -->
+        <div class="card" id="matchAnalysis">
+            <!-- Will be populated by JS -->
+        </div>
+
+        <!-- Batting and Bowling Stats -->
+        <div class="stats-container">
+            <!-- Team 1 Batting Stats -->
+            <div class="card" id="team1Batting">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <!-- Team 2 Batting Stats -->
+            <div class="card" id="team2Batting">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <!-- Team 1 Bowling Stats -->
+            <div class="card" id="team1Bowling">
+                <!-- Will be populated by JS -->
+            </div>
+
+            <!-- Team 2 Bowling Stats -->
+            <div class="card" id="team2Bowling">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- View Full Scorecard Button -->
+        <div class="button-container">
+            <a href="#" class="action-button" id="inDepthBtn">In Depth Conclusion</a>
+            <a href="team-selection.html" class="action-button secondary">New Match</a>
+        </div>
+    </div>
+
+    <!-- Include AI Integration -->
+    <script src="js/ai-integration.js"></script>
+    <script src="js/summary.js"></script>
+</body>
+</html> 

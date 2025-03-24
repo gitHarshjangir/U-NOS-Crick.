@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Selection - Dream Cricket Team Simulator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/team-selection.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="team-selection-page">
+            <header class="game-header">
+                <h1>Team Selection</h1>
+                <div id="formatDisplay" class="format-display">
+                    Select Format
+                </div>
+                <div class="time-selection">
+                    <h3>Select Time Limit</h3>
+                    <div class="time-options">
+                        <button class="time-btn" data-time="unlimited">Unlimited Time</button>
+                        <button class="time-btn" data-time="120">2 Minutes</button>
+                        <button class="time-btn" data-time="180">3 Minutes</button>
+                        <button class="time-btn" data-time="300">5 Minutes</button>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <div id="currentTurn" class="turn-indicator">Player 1's Turn</div>
+                    <div id="timer" class="timer">Select Time</div>
+                </div>
+                <div class="stadium-info">
+                    <span id="selectedStadiumDisplay"></span>
+                </div>
+            </header>
+
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="playerSearch" placeholder="Search for players (current & historical)...">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                <div class="random-players-container">
+                    <button id="randomPlayersBtn" class="random-btn">Random Players</button>
+                </div>
+            </div>
+
+            <div class="teams-container">
+                <div class="team-column">
+                    <h2 id="team1Name">Team 1</h2>
+                    <div id="team1Players" class="team-players">
+                        <div class="player-slots">
+                            <!-- 11 empty slots for Team 1 -->
+                            <div class="player-slot empty" data-slot="1">
+                                <span class="slot-number">1</span>
+                                <span class="empty-text">Empty Slot</span>
+                            </div>
+                            <!-- Repeat for slots 2-11 -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-column">
+                    <h2 id="team2Name">Team 2</h2>
+                    <div id="team2Players" class="team-players">
+                        <div class="player-slots">
+                            <!-- 11 empty slots for Team 2 -->
+                            <div class="player-slot empty" data-slot="1">
+                                <span class="slot-number">1</span>
+                                <span class="empty-text">Empty Slot</span>
+                            </div>
+                            <!-- Repeat for slots 2-11 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proceed-button">
+                <button id="tossButton" class="toss-proceed-btn">Proceed to Toss</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <h2>Rule Violation</h2>
+            <p>This game is not made for noobs. Please try again.</p>
+            <button onclick="window.location.href='index.html'" class="primary-btn">Start Over</button>
+        </div>
+    </div>
+
+    <!-- Format Modal -->
+    <div id="formatModal" class="modal">
+        <div class="modal-content format-modal">
+            <h2>Select Playing Format</h2>
+            <div class="format-options">
+                <button class="format-btn" data-format="test">Test Match (11 Players)</button>
+                <button class="format-btn" data-format="odi">ODI (11 Players)</button>
+                <button class="format-btn" data-format="t20">T20 (11 Players)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/team-selection.js"></script>
+</body>
+</html> 

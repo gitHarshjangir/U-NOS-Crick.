@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Match - Toss</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/toss.css">
+</head>
+<body>
+    <div class="container">
+        <div class="toss-page">
+            <header class="toss-header">
+                <h1>Match Toss</h1>
+                <div id="formatDisplay" class="format-display">
+                    Loading format...
+                </div>
+                <div class="stadium-info">
+                    <span id="selectedStadiumDisplay"></span>
+                </div>
+            </header>
+
+            <div class="teams-info">
+                <div class="team-card" id="team1Card">
+                    <h2 id="team1Name"></h2>
+                    <div class="captain-selection">
+                        <label for="team1CaptainSelect">Select Captain:</label>
+                        <select id="team1CaptainSelect" class="captain-select">
+                            <option value="">Choose captain...</option>
+                        </select>
+                    </div>
+                    <div class="captain-info">
+                        Captain: <span id="team1Captain">Not selected</span>
+                    </div>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="team-card" id="team2Card">
+                    <h2 id="team2Name"></h2>
+                    <div class="captain-selection">
+                        <label for="team2CaptainSelect">Select Captain:</label>
+                        <select id="team2CaptainSelect" class="captain-select">
+                            <option value="">Choose captain...</option>
+                        </select>
+                    </div>
+                    <div class="captain-info">
+                        Captain: <span id="team2Captain">Not selected</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="validationMessage" class="validation-message hidden">
+                Please select captains for both teams before proceeding with the toss
+            </div>
+
+            <div class="toss-section">
+                <div class="coin-container">
+                    <div class="coin" id="coin">
+                        <div class="heads">
+                            <span class="coin-text">HEAD</span>
+                        </div>
+                        <div class="tails">
+                            <span class="coin-text">TAIL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toss-controls">
+                    <div class="toss-choice">
+                        <h3 id="currentPlayerTurn"></h3>
+                        <div class="choice-buttons">
+                            <button class="choice-btn" data-choice="heads" disabled>Heads</button>
+                            <button class="choice-btn" data-choice="tails" disabled>Tails</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tossResult" class="toss-result hidden">
+                    <h3>Toss Result</h3>
+                    <p id="tossWinner"></p>
+                    <div class="decision-buttons hidden">
+                        <button class="decision-btn" data-decision="bat">Bat First</button>
+                        <button class="decision-btn" data-decision="bowl">Bowl First</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="match-summary hidden">
+                <h3>Match Summary</h3>
+                <div id="matchSummary"></div>
+                
+                <div class="ai-model-selection">
+                    <label for="aiModelSelect">Processing:</label>
+                    <select id="aiModelSelect" class="ai-model-select">
+                        <option value="deepseek">R1</option>
+                    </select>
+                </div>
+                
+                <button id="startMatchBtn" class="start-match-btn">Start Match</button>
+            </div>
+
+            <!-- Team Selection Captains -->
+            <div class="toss-form" id="tossForm">
+                <!-- Will be populated by JS -->
+            </div>
+        </div>
+    </div>
+    <script src="js/ai-integration.js"></script>
+    <script src="js/toss.js"></script>
+</body>
+</html> 

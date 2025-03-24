@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO U-NOS Crick Simulator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="registration-page" id="registrationPage">
+            <h1>WELCOME TO U-NOS Crick. Simulator</h1>
+            <div class="registration-form">
+                <div class="player-inputs">
+                    <div class="input-group">
+                        <label for="player1">Player 1 Name</label>
+                        <input type="text" id="player1" placeholder="Enter Player 1 name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="player2">Player 2 Name</label>
+                        <input type="text" id="player2" placeholder="Enter Player 2 name" required>
+                    </div>
+                </div>
+                <div class="stadium-selection">
+                    <h2>Select Stadium</h2>
+                    <div class="search-container">
+                        <input type="text" id="stadiumSearch" placeholder="Search for a stadium...">
+                        <div id="stadiumList" class="stadium-list"></div>
+                    </div>
+                    <div id="selectedStadium" class="selected-stadium">
+                        <p>No stadium selected</p>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button id="startGame" class="primary-btn" disabled>Next</button>
+                    <button id="rulesBtn" class="secondary-btn">Game Rules</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Rules Modal -->
+    <div id="rulesModal" class="modal">
+        <div class="modal-content rules-modal">
+            <div class="modal-header">
+                <h2>U-NOS Crick Game Rules</h2>
+                <span id="closeRulesModal" class="close-modal">&times;</span>
+            </div>
+            <div class="rules-content">
+                <ol class="rules-list">
+                    <li>Both players must register their name and select stadium preference.</li>
+                    <li>After clicking to next selection of format is must.</li>
+                    <li>Carefully choose time section to start selecting players accordingly!</li>
+                    <li>Search functionality fetchs data directly from wiki. select any cricket player from there.</li>
+                    <li>You can not undo the player once it is selected.</li>
+                    <li>After processing further it is necessaray to choose the captain from both U-NOS Crick 11.</li>
+                    <li>Follow the process of toss.</li>
+                    <li>After toss there is also a option of integratin on API dependecies. (Manually can be placed in /js/ai-integration.js file.</li>
+                    <li>Start the match and see your results.</li>
+                    <li><em>To bhai zyada mat soch bas maje kar.</em></li>
+                </ol>
+                <div class="note-box">
+                    <strong>Note:</strong> This web application is still in testing phase, backend processing of data inputs and all the variables permutations with multiple combinations of possiblities is in training & Testing mode, you can use this app and make your own algo. approaches and with secondary or primary data.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html> 
